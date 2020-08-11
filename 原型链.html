@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+  <script>
+    function Foo(){}
+    let a = new Foo()
+
+    a.x= 'qq';
+
+    Foo.prototype.x=1;
+    Foo.prototype.y=2;
+    console.log(a.x)
+    console.log(a.y)
+
+    // f1.a是f1对象的基本属性，f1.b是怎么来的呢？——从Foo.prototype得来，
+    // 因为f1.__proto__指向的是Foo.prototype
+    // 访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着__proto__这条链向上找，这就是原型链。
+    ` 那么我们在实际应用中如何区分一个属性到底是基本的还是从原型中找到的呢？大家可能都知道答案了——hasOwnProperty
+
+    
+    `
+    </script>
+
+  <script>
+    // 原型的灵活性
+    ` 自定义一个函数，并自己去修改prototype.toString()方法。
+
+    `
+    console.log(a.toString())
+    Foo.prototype.toString = function() { return 'xxx'}
+    console.log(a.toString())
+  </script>
+
+  <!-- typeof 和 instanceof的区别 -->
+  <script>
+    typeof 'dd' // "string"
+    typeof [1,32,3] // // "object"
+    typeof 1 // "number"
+    typeof {} // "object"
+    typeof null // "object"
+    typeof undefined // undefined
+    typeof true  // "boolean"
+    typeof Symbol // "function"
+    typeof Symbol() // "symbol"
+
+  </script>
+
+</body>
+</html>

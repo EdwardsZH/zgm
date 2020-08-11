@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="format-detection" content="telephone=no">
+  <title>小程序</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <div>
+    Q:  小程序的技术架构和方案、小程序的出现主要解决什么问题？
+
+    A:  包含小程序容器、渲染引擎和 JavaScript 引擎。
+        UI 层运行在 WebView 中，而逻辑层运行在独立的 JS 引擎中。
+        解决降低获客成本、打通跨端；
+
+        
+    Q:  view 层、js 层分别在哪里、怎么通信 ?
+    A:  业务逻辑的 JS 在独立的 JavaScript 引擎（ServiceWorker）中，
+        每个页面的 view 和 css 运行在各自独立的 webview 里面，
+        页面之间是通过函数 navigateTo 进行页面的切换；
+        JS 层和 view 层通过消息服务 MessageChannel 进行通信
+    
+
+    Q:  Taro 和其他小程序框架的横向对比，如何选型，Taro、uni-app、kbone、WePY、mpvue，Taro 的一些好用的点和不好用的点，聊下想法
+    A:  一些特性不支持，不过随着 Taro 的升级也在解决；
+    
+        Taro 本身的限制；对 React 的语法支持有限，比如不能使用 Array#map 之外的方法操作 JSX 数组
+    
+
+    Q:  React 代码转成小程序代码的原理
+    A:  编译器修改和运行时修改，同时配合 babel 做编译、转译
+
+
+    Q:  Babel 的转换过程，比如把 JSX 的 map 转成 wxml
+    A:  oddNumbers.map(number => <Text onClick={this.handleClick}>{number}</Text>)生成的数据结构是
+        {
+            type: 'element',
+            tagName: 'text',
+            attributes: [
+              { bindtap: 'handleClick' },
+              { 'wx:for': '{{oddNumbers}}' },
+              { 'wx:for-item': 'number' }
+            ],
+            children: [
+              { type: 'text', content: '{{number}}' }
+            ]
+        }再根据这个结构转成 wxml 就好了
+
+
+    Q:  真实数据和缓存的竞争如何处理，第一次如何处理，第二次有更新如何处理
+    A: 
+
+    Q:  npm 版本号 ^ ~ 的区别
+    A:  脱字符(^)来限定所安装模块的主版本号
+
+        ^1.2.1  代表的更新版本范围为 >=1.2.1 && < 2.0.0，即 1.x
+
+        ^0.2.1  代表的更新版本范围为 >=0.2.1 && < 0.3.0，即 0.2.x
+
+        ^0.0.2  代表的更新版本范围为 0.0.2（相当于锁定为了0.0.2版本），即 0.0.2
+
+        波浪号(~)是限定模块的次要版本
+
+        ~1.5.1允许安装版本号大于1.5.1但小于1.6.0版本的模块，即 1.5.x
+
+        ~0.5.1允许安装版本号为0.6.0，即0.5.x
+
+    
+    Q:  怎么发 beta 版本
+    A:  npm publish --tag beta
+
+
+    Q: 埋点数据上报的方案
+    A: ajax 请求，img，script 标签上报；
+
+
+    Q: 图片方案的原理和优势
+    A: img 天然支持跨域，跨域友好， 不占用 ajax 请求， 执行无阻塞；
+
+
+    Q: 考虑工作机会 的优先级（公司，团队，技术，薪资）
+
+    Q: 面对压力的一般怎么应对，之前的工作绩效，团队的定位和排名
+
+  </div>
+
+  <script>
+
+    function foo() {
+      var a = 20; var b = 30;
+
+
+      function bar() { 
+        return a + b;
+      }
+      return bar;
+    }
+    var bar = foo();
+
+    bar();
+
+
+
+  // demo06
+
+  var a = 10;
+  var obj = {
+    a: 20
+  }
+
+  function fn() {
+    console.log(this.a);
+  }
+  fn.call(obj); // 20
+  </script>
+  
+</body>
+</html>
