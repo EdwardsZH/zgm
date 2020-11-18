@@ -4,7 +4,7 @@ module.exports = {
   title: '资深前端知识体系整理',
   description: '前端知识体系',
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }],
+    ['link', { rel: 'icon', href: `/logo.jpg` }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
@@ -16,14 +16,12 @@ module.exports = {
     editLinkText: '在 GitHub 上编辑此页',
     lastUpdated: '上次更新',
     smoothScroll: true,
-    // logo: '/logo.png',
-    nav: [  
+    logo: '/logo.jpg',
+    nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'External', link: 'https://google.com' },
-      {
-        text: 'Languages',
-        ariaLabel: 'Language Menu',
+      { text: 'Languages', ariaLabel: 'Language Menu',
         items: [
           { text: 'Chinese', link: '/language/chinese/' },
           { text: 'Japanese', link: '/language/japanese/' }
@@ -31,81 +29,18 @@ module.exports = {
       }
     ],
     sidebar: [
-      {
-        title: 'css',
-        collapsable: true,
-        children: [
-          'css/common',
-        ]
-      },
-      {
-        title: 'js基础',
-        collapsable: true,
-        children: [
-          'js/basic',
-          'js/business',
-          'js/ui',
-          'js/callH5',
-          'js/device',
-          'js/imitate',
-          'js/share',
-          'js/other',
-        ]
-      },
-      {
-        title: '框架原理',
-        collapsable: true,
-        children: [
-          'frame/basic',
-          'frame/mall',
-          'frame/health',
-          'frame/tj',
-          'frame/news',
-          'frame/insurance',
-          'frame/uplus',
-          'frame/other',
-        ]
-      },
-      {
-        title: 'webpack',
-        collapsable: true,
-        children: [
-          'webpack/basic',
-          'webpack/mall',
-          'webpack/health',
-          'webpack/news',
-          'webpack/uplus',
-          'webpack/other',
-        ]
-      },
-      {
-        title: 'node',
-        collapsable: true,
-        children: [
-          'node/api'
-        ]
-      },
-      {
-        title: '插件库原理',
-        collapsable: true,
-        children: [
-          'plugin/fastclick'
-        ]
-      },
-      {
-        title: '计算机组成原理',
-        collapsable: true,
-        children: [
-          'plugin/fastclick'
-        ]
-      },
-      {
-        title: '客户端 APP',
-        collapsable: true,
-        children: [
-          'plugin/fastclick'
-        ]
-      }
+      { title: 'HTML', collapsable: true, children: ['src/html/content',] },
+      { title: 'CSS', collapsable: true, children: ['src/css/content',] },
+      { title: 'JS基础', collapsable: true, children: ['src/js/basic', ] },
+      { title: '浏览器', collapsable: true, children: ['src/browser/content', ] },
+      { title: '手写JS实现', collapsable: true, children: ['src/coderewrite/content', ] },
+      { title: '框架原理', collapsable: true, children: ['src/frame/content', ] },
+      { title: 'Webpack', collapsable: true, children: ['src/webpack/content', ] },
+      { title: 'Node', collapsable: true, children: ['src/node/content', ] },
+      { title: '插件库原理', collapsable: true, children: ['src/plugin/content', ] },
+      { title: '客户端 APP', collapsable: true, children: ['src/app/content', ] },
+      { title: '数据结构和算法', collapsable: true, children: ['src/algorithm/content', ] },
+      { title: '前端工程化', collapsable: true, children: ['src/engineering/content', ] },
     ]
   }
 }
