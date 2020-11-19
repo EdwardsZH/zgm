@@ -39,8 +39,8 @@ module.exports = {
       { title: 'Node', collapsable: true, children: ['src/node/content', ] },
       { title: '插件库原理', collapsable: true, children: ['src/plugin/content', ] },
       { title: '客户端 APP', collapsable: true, children: ['src/app/content', ] },
-      { title: '数据结构和算法', collapsable: true, children: ['src/algorithm/content', ] },
       { title: '前端工程化', collapsable: true, children: ['src/engineering/content', ] },
+      { title: '数据结构和算法', collapsable: true, children: ['src/algorithm/content', ] }
     ]
   }
 }

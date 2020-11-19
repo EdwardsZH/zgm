@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vue-cli-service serve --open",
     "dev:docs": "vuepress dev docs",
-    "build:docs": "vuepress build docs && cross-env BUILD=build-docs node config/upload"
+    "build:docs": "vuepress build docs",
+    "publish": "cross-env BUILD=build-docs node config/upload"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -23,10 +24,9 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "rimraf": "^3.0.0",
-    "vue": "2.6.11",
+    "vue": "2.6.12",
     "vue-router": "3.0.1",
-    "vue-template-compiler": "2.6.11",
-    "vuepress": "1.4.0",
-    "web-report": "^1.0.8"
+    "vue-template-compiler": "2.6.12",
+    "vuepress": "^1.4.0"
   }
 }
