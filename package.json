@@ -4,29 +4,18 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vue-cli-service serve --open",
     "dev:docs": "vuepress dev docs",
     "build:docs": "vuepress build docs",
-    "publish": "cross-env BUILD=build-docs node config/upload"
+    "upload": "cross-env BUILD=build-docs node config/upload"
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "md5": "^2.2.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-service": "^3.1.4",
+    "axios": "^0.17.1",
+    "md5": "^2.2.1",
     "ali-oss": "^6.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.18.0",
     "cross-env": "^5.2.0",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.5",
     "rimraf": "^3.0.0",
-    "vue": "2.6.12",
-    "vue-router": "3.0.1",
-    "vue-template-compiler": "2.6.12",
-    "vuepress": "^1.4.0"
+    "vuepress": "^1.7.1"
   }
 }

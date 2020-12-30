@@ -1,5 +1,6 @@
+// https://www.vuepress.cn/config/#index-styl  中文文档
 module.exports = {
-  base: '/',
+  base: '/zgm/docs/',
   dest: 'docs/dist',
   title: '资深前端知识体系整理',
   description: '前端知识体系',
@@ -40,7 +41,8 @@ module.exports = {
       { title: '插件库原理', collapsable: true, children: ['src/plugin/content', ] },
       { title: '客户端 APP', collapsable: true, children: ['src/app/content', ] },
       { title: '前端工程化', collapsable: true, children: ['src/engineering/content', ] },
-      { title: '数据结构和算法', collapsable: true, children: ['src/algorithm/content', ] }
+      { title: '数据结构和算法', collapsable: true, children: ['src/algorithm/content', ] },
+      { title: '真实面试', collapsable: true, children: ['src/interview/content', ] },
     ]
   }
 }

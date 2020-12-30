@@ -551,3 +551,13 @@ ES6 新出的两种数据结构：WeakSet 和 WeakMap，
 > 队列是一种先进先出的（FIFO）的数据结构。 正如排队过安检一样，排在队伍前面 的人一定是最先过安检的人 。
 
 ![](//app-test.h5.ihaozhuo.com/zgm/images/291597287250_.pic.jpg)
+
+# 前端面试复习导图
+## this、apply、call、bind
+
+
+宏任务是浏览器的队列维护，微任务是引擎的队列在维护
+
+node 中间件的 原理是什么？
+js的this是动态的， 不像java 那种 this 指向 类自身
+
