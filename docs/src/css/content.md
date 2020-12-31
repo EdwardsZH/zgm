@@ -1,32 +1,55 @@
-# 三种基础数据结构
+# css
 
-## 栈( stack)、堆 (heap )、队列(queue)。
+## css 的 伪类 和 伪元素 有什么区别？
+![An image](../../images/css/1.png)
 
-### 栈( stack)
-- 场景1: 栈是一种数据结构，它表达的是数据的一种存取方式，这是一种理论基础。
-- 场景2: 栈可用来规定代码的执行顺序，在 JavaScript 中叫作函数调用栈( call stack )，它是根据栈数据结构理论而实现的一种实践。
-- 总结为先进后出，后进先出 ( LIFO , Last In, First Out )。 
-![](//app-test.h5.ihaozhuo.com/zgm/images/311597287563_.pic_hd.jpg)
+## css 的 link 和 @import 有什么区别？
+![An image](../../images/css/2.png)
 
-### 堆 (heap )
-> 堆数据结构通常是一种树状结构。它的存取方式与在书架中取书的方式非常相似。 
-> 书虽然整齐地摆放在书架上，但是只要知道 书的名字，在书架中找到它之后就可以很方便地取出，我们甚至不用关心书的存放顺序。
+## 说一下盒模型的区别？border-box 和 content-box 的区别？
+![An image](../../images/css/3.png)
 
-![](//app-test.h5.ihaozhuo.com/zgm/images/301597287457_.pic_hd.jpg)
+## css 怎么实现动画？
+![An image](../../images/css/4.png)
+
+## css 的单位有哪些？
+![An image](../../images/css/5.png)
+
+## 居中为什么使用 transform（为什么不使用 marginleft 和 marginTop）？
+![An image](../../images/css/6.png)
+![An image](../../images/css/7.png)
+
+## 怎么解决移动端适配 1px 的问题？
+#### 起因： 移动端window对象有个devicePixelRatio属性,它表示设备物理像素和css像素的比例, 在retina屏的iphone手机上, 这个值为2或3,css里写的1px长度映射到物理像素上就有2px或3px那么长；
+#### 解决方案： 1.用小数来写px值 （不推荐）
 ```js
-  var heap = {
-    a: 10,
-    b: 20,
-    c: {
-      m: 100,
-      n: 110
-    }
-  }
-  // 当我们想要访问 a 时，只需通过 heap.a 来访问即可，而不用关心 a、 b、 c 的具体顺序 。
+IOS8下已经支持带小数的px值, media query 对应 devicePixelRatio 有个查询值 -webkit-min-device-pixel-ratio, 
+css可以写成这样通过-webkit-min-device-pixel-ratio设置。
+.border { border: 1px solid #999 }
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border { border: 0.5px solid #999 }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border { border: 0.333333px solid #999 }
+}
+
+如果使用less/sass的话只是加了1句mixin。
+缺点: 安卓与低版本IOS不适用, 这个或许是未来的标准写法, 现在不做指望。
 ```
 
-### 队列(queue)
-> 队列是一种先进先出的（FIFO）的数据结构。 正如排队过安检一样，排在队伍前面 的人一定是最先过安检的人 。
+#### 解决方案： 2.flexible.js
+```js
+前面已经说过1px变粗的原因就在于一刀切的设置 viewport 宽度, 如果能把 viewport 宽度设置为实际的设备物理宽度, 
+css 里的 1px 不就等于实际 1px 长了么. flexible.js 就是这样干的.
+<meta name=”viewport”>里面的 scale 值指的是对 ideal viewport 的缩放, flexible.js 检测到 IOS 机型, 会算出 scale = 1/devicePixelRatio, 然后设置viewport。
+```
 
-![](//app-test.h5.ihaozhuo.com/zgm/images/291597287250_.pic.jpg)
+## em，rem 和 px 的区别？
+![An image](../../images/css/8.png)
 
+## 介绍一下 flex 布局？
+```
+Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+
+https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+```
