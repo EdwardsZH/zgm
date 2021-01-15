@@ -49,7 +49,30 @@ css 里的 1px 不就等于实际 1px 长了么. flexible.js 就是这样干的.
 
 ## 介绍一下 flex 布局？
 ```
-Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
+Flex 意为"弹性布局"，用来为盒状模型提供最大的灵活性。
 
 https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 ```
+
+## float和 position有什么区别？
+![An image](../../images/css/9.png)
+
+## 说一下浏览器的渲染流程，说一下什么是重回重排，哪些操作会造成重绘重排？
+![An image](../../images/css/10.png)
+![An image](../../images/css/11.png)
+![An image](../../images/css/12.png)
+![An image](../../images/css/13.png)
+![An image](../../images/css/14.png)
+```
+触发的一些因素：
+1.页面首次进入的渲染。
+2.浏览器的 resize。
+3.元素位置和尺寸发生改变的时候。
+4.可见元素的增删。
+5.内容发生改变。
+6.字体的 font 的改版。
+7.css 的伪类激活。
+```
+
+## css 预处理。less sass 带来的好处？
+![An image](../../images/css/15.png)

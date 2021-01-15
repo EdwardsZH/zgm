@@ -1,4 +1,4 @@
-# JS
+# JS必知必会
 
 ## this、apply、call、bind
 `this 的指向并不是在创建的时候就可以确定的,
@@ -560,4 +560,3 @@ ES6 新出的两种数据结构：WeakSet 和 WeakMap，
 
 node 中间件的 原理是什么？
 js的this是动态的， 不像java 那种 this 指向 类自身
-

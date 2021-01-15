@@ -32,7 +32,7 @@ module.exports = {
     sidebar: [
       { title: 'HTML', collapsable: true, children: ['src/html/content',] },
       { title: 'CSS', collapsable: true, children: ['src/css/content',] },
-      { title: 'JS基础', collapsable: true, children: ['src/js/basic', ] },
+      { title: 'JS基础', collapsable: true, children: [ 'src/js/basic', 'src/js/content', ] },
       { title: '浏览器', collapsable: true, children: ['src/browser/content', ] },
       { title: '手写JS实现', collapsable: true, children: ['src/coderewrite/content', ] },
       { title: '框架原理', collapsable: true, children: ['src/frame/content', ] },
